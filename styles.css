@@ -84,8 +84,9 @@ h2 {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
+  /* background-color: var(--color-tertiary-bg);  Removido para eliminar o fundo verde */
+  /* outline-color: var(--color-tertiary-outline);  Opcional: remova se quiser tirar o contorno */
 }
-
 .devices-link {
   background-color: var(--color-accent-green-bg);
   padding-bottom: 20px;
