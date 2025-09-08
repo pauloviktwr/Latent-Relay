@@ -30,11 +30,12 @@ a:active {
 
 body {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
-  background: url('assets/background.png') no-repeat center center;
+  background: url('assets/background.png') no-repeat center center fixed;
   background-size: cover;
   color: var(--color-text);
   margin: 0;
   padding: 0;
+  background-attachment: fixed; /* esta linha fixa o background */
 }
 
 h1,
