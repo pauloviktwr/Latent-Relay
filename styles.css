@@ -18,17 +18,20 @@
   /* Debug outline */
   --color-outline-default: rgba(255,255,255,0.22);
 }
+
 a:link, a:visited, a:hover, a:active {
   color: inherit;
   text-decoration: none;
-  cursor: pointer; /* opcional para mostrar que é clicável */
+  cursor: pointer;
 }
+
 @font-face {
   font-family: 'BPDotsPlus';
   src: url(assets/fonts/BPdotsPlus.otf) format('opentype');
   font-weight: normal;
   font-style: normal;
 }
+
 body {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   background: url('assets/background.png') no-repeat center center;
@@ -37,10 +40,12 @@ body {
   margin: 0;
   padding: 0;
 }
+
 h1, h2, h3, h4, .menu, .retro-title {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   letter-spacing: 2px;
 }
+
 .main-header {
   text-align: center;
   margin-top: 36px;
@@ -52,6 +57,7 @@ h1, h2, h3, h4, .menu, .retro-title {
   margin-bottom: 10px;
   border-radius: 8px;
 }
+
 .intro-text {
   margin: 20px auto 24px auto;
   max-width: 540px;
@@ -62,6 +68,7 @@ h1, h2, h3, h4, .menu, .retro-title {
   color: var(--color-primary);
   margin-bottom: 10px;
 }
+
 h2 {
   text-align: center;
   letter-spacing: 2px;
@@ -73,6 +80,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
 }
+
 .devices-link {
   max-width: 150px;
   margin: 0 auto 20px auto;
@@ -82,9 +90,11 @@ h2 {
   flex-direction: column;
   align-items: center;
 }
+
 .devices-link a {
   display: inline-block;
 }
+
 .devices-link img {
   display: block;
   max-width: 100%;
@@ -92,6 +102,7 @@ h2 {
   margin: 0 auto 12px auto;
   height: auto;
 }
+
 /* Imagens responsivas de conteúdo */
 .devices-block img,
 .places-block img,
@@ -103,6 +114,7 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
+
 /* Containers que acomodam o conteúdo */
 .devices-block,
 .places-block,
@@ -115,6 +127,7 @@ h2 {
   color: var(--color-text);
   text-align: center;
 }
+
 /* Ajustes gerais para telas menores */
 @media (max-width: 768px) {
   .devices-block,
@@ -148,6 +161,7 @@ h2 {
     font-size: 0.9em;
   }
 }
+
 /* Ajuste para telas muito pequenas */
 @media (max-width: 400px) {
   .main-header {
