@@ -88,8 +88,8 @@ h2 {
   /* outline-color: var(--color-tertiary-outline);  Opcional: remova se quiser tirar o contorno */
 }
 .devices-link {
-  background-color: var(--color-accent-green-bg);
-  padding-bottom: 20px;
+/*   background-color: var(--color-accent-green-bg);
+  padding-bottom: 20px; */
   max-width: 150px;
   margin: 0 auto 20px auto;
   border-radius: 8px;
