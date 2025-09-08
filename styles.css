@@ -1,25 +1,21 @@
 :root {
-  /* Branco absoluto para títulos, textos principais e ícones pixel */
   --color-primary: #fff;
   --color-primary-bg: rgba(255,255,255,0.06); 
   --color-primary-outline: rgba(255,255,255,0.9);
-  /* Preto sólido para fundos e containers */
   --color-bg-dark: #111112;
   --background-opacity-dark: rgba(17,17,18,0.92);
-  /* Verde-limão digital para detalhes/realces */
   --color-accent-green: #c4fd55;
   --color-accent-green-bg: rgba(196,253,85,0.16);
   --color-accent-green-outline: rgba(196,253,85,0.62);
-  /* Lilás digital opcional para detalhes retro */
   --color-accent-purple: #b0a7fc;
   --color-accent-purple-outline: rgba(176,167,252,0.6);
-  /* Cor do texto padrão: branco puro sobre fundo escuro */
   --color-text: #fff;
-  /* Debug outline */
-  --color-outline-default: rgba(255,255,255,0.22);
 }
 
-a:link, a:visited, a:hover, a:active {
+a:link,
+a:visited,
+a:hover,
+a:active {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
@@ -41,7 +37,12 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, .menu, .retro-title {
+h1,
+h2,
+h3,
+h4,
+.menu,
+.retro-title {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   letter-spacing: 2px;
 }
@@ -67,43 +68,47 @@ h1, h2, h3, h4, .menu, .retro-title {
   text-align: center;
   color: var(--color-primary);
   margin-bottom: 10px;
+  font-size: 1em;
 }
 
-h2 {
-  text-align: center;
-  letter-spacing: 2px;
-  color: var(--color-primary);
-  padding: 10px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+/* Sessão dos links */
 .devices-link {
-  max-width: 150px;
   margin: 0 auto 20px auto;
   border-radius: 8px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 150px;
 }
 
 .devices-link a {
   display: inline-block;
 }
 
+/* Imagens dos links */
 .devices-link img {
   display: block;
-  max-width: 100%;
   border-radius: 12px;
   margin: 0 auto 12px auto;
   height: auto;
+  width: 100%;
+  max-width: 150px;
+  min-width: 80px;
 }
 
-/* Imagens responsivas de conteúdo */
+/* Título dos links */
+.devices-link h2 {
+  margin: 0;
+  font-size: 1.2em;
+  text-align: center;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  width: 100%;
+}
+
+/* Conteúdo das sessões interiores */
 .devices-block img,
 .places-block img,
 .data-block img {
@@ -115,7 +120,6 @@ h2 {
   box-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
-/* Containers que acomodam o conteúdo */
 .devices-block,
 .places-block,
 .data-block {
@@ -128,60 +132,65 @@ h2 {
   text-align: center;
 }
 
-/* Ajustes gerais para telas menores */
-@media (max-width: 768px) {
-  .devices-block,
-  .places-block,
-  .data-block {
-    max-width: 95vw;
-    padding: 8px;
-  }
+/* Responsivo para tablets e celulares */
+@media (max-width: 900px) {
   .main-header {
-    font-size: 1rem;
+    font-size: 2em;
     margin-top: 20px;
   }
   .intro-text {
-    font-size: 1rem;
-    max-width: 90vw;
+    font-size: 0.95em;
+    max-width: 92vw;
+    padding: 10px 4vw;
   }
   h2 {
-    font-size: 1rem;
-    max-width: 90vw;
+    font-size: 1.1em;
+    max-width: 88vw;
   }
   .devices-link {
     max-width: 180px;
   }
   .devices-link img {
-    max-width: 260px;
-  }
-  body {
-    font-size: 0.9em;
-  }
-  h1, h2, h3, h4 {
-    font-size: 0.9em;
+    max-width: 180px;
   }
 }
 
-/* Ajuste para telas muito pequenas */
-@media (max-width: 460px) {
-  /* Texto de boas-vindas com fonte menor e padding lateral */
+@media (max-width: 600px) {
   .intro-text {
-    font-size: 0.7em;
-    max-width: 90vw;
-    padding: 8px 5vw;
+    font-size: 0.82em;
+    max-width: 96vw;
+    padding: 10px 2vw;
   }
-
-  /* Container dos links para ter largura maior */
   .devices-link {
-    max-width: 95vw;
+    max-width: 240px;
   }
-
-  /* Imagens dos links maiores e responsivas */
   .devices-link img {
-    width: 90vw;
-    max-width: 320px;
-    min-width: 80px;
-    height: auto;
-    margin-bottom: 12px;
+    max-width: 210px;
+  }
+}
+
+/* MOBILE: garante imagem grande e fonte pequena em telas ≤460px */
+@media (max-width: 460px) {
+  .main-header {
+    font-size: 1.07em;
+    margin-top: 12px;
+  }
+  .intro-text {
+    font-size: 0.68em;
+    max-width: 95vw;
+    padding: 8px 2vw;
+  }
+  h2, h3, h4 {
+    font-size: 0.9em;
+  }
+  .devices-link {
+    width: 99vw;
+    max-width: none;
+  }
+  .devices-link img {
+    width: 92vw;
+    max-width: 330px;
+    min-width: 60px;
+    margin-bottom: 10px;
   }
 }
