@@ -3,40 +3,32 @@
   --color-primary: #fff;
   --color-primary-bg: rgba(255,255,255,0.06); 
   --color-primary-outline: rgba(255,255,255,0.9);
-
   /* Preto sólido para fundos e containers */
   --color-bg-dark: #111112;
   --background-opacity-dark: rgba(17,17,18,0.92);
-
   /* Verde-limão digital para detalhes/realces */
   --color-accent-green: #c4fd55;
   --color-accent-green-bg: rgba(196,253,85,0.16);
   --color-accent-green-outline: rgba(196,253,85,0.62);
-
   /* Lilás digital opcional para detalhes retro */
   --color-accent-purple: #b0a7fc;
   --color-accent-purple-outline: rgba(176,167,252,0.6);
-
   /* Cor do texto padrão: branco puro sobre fundo escuro */
   --color-text: #fff;
-
   /* Debug outline */
   --color-outline-default: rgba(255,255,255,0.22);
 }
-
 a:link, a:visited, a:hover, a:active {
   color: inherit;
   text-decoration: none;
   cursor: pointer; /* opcional para mostrar que é clicável */
 }
-
 @font-face {
   font-family: 'BPDotsPlus';
   src: url(assets/fonts/BPdotsPlus.otf) format('opentype');
   font-weight: normal;
   font-style: normal;
 }
-
 body {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   background: url('assets/background.png') no-repeat center center;
@@ -45,12 +37,10 @@ body {
   margin: 0;
   padding: 0;
 }
-
 h1, h2, h3, h4, .menu, .retro-title {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   letter-spacing: 2px;
 }
-
 .main-header {
   text-align: center;
   margin-top: 36px;
@@ -62,7 +52,6 @@ h1, h2, h3, h4, .menu, .retro-title {
   margin-bottom: 10px;
   border-radius: 8px;
 }
-
 .intro-text {
   margin: 20px auto 24px auto;
   max-width: 540px;
@@ -73,7 +62,6 @@ h1, h2, h3, h4, .menu, .retro-title {
   color: var(--color-primary);
   margin-bottom: 10px;
 }
-
 h2 {
   text-align: center;
   letter-spacing: 2px;
@@ -84,28 +72,26 @@ h2 {
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
-  /* background-color: var(--color-tertiary-bg);  Removido para eliminar o fundo verde */
-  /* outline-color: var(--color-tertiary-outline);  Opcional: remova se quiser tirar o contorno */
 }
 .devices-link {
-/*   background-color: var(--color-accent-green-bg);
-  padding-bottom: 20px; */
   max-width: 150px;
   margin: 0 auto 20px auto;
   border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
 .devices-link a {
   display: inline-block;
 }
-
 .devices-link img {
   display: block;
   max-width: 100%;
   border-radius: 12px;
-  margin: 0 auto;
+  margin: 0 auto 12px auto;
+  height: auto;
 }
-
 /* Imagens responsivas de conteúdo */
 .devices-block img,
 .places-block img,
@@ -117,7 +103,6 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
-
 /* Containers que acomodam o conteúdo */
 .devices-block,
 .places-block,
@@ -130,7 +115,6 @@ h2 {
   color: var(--color-text);
   text-align: center;
 }
-
 /* Ajustes gerais para telas menores */
 @media (max-width: 768px) {
   .devices-block,
@@ -151,9 +135,20 @@ h2 {
     font-size: 1.5em;
     max-width: 90vw;
   }
+  .devices-link {
+    max-width: 180px;
+  }
+  .devices-link img {
+    max-width: 180px;
+  }
+  body {
+    font-size: 0.9em;
+  }
+  h1, h2, h3, h4 {
+    font-size: 0.9em;
+  }
 }
-
-/* Para telas muito pequenas */
+/* Ajuste para telas muito pequenas */
 @media (max-width: 400px) {
   .main-header {
     font-size: 1.5em;
@@ -164,28 +159,8 @@ h2 {
   h2 {
     font-size: 1.2em;
   }
-}
-/* Aumenta imagens dos links em dispositivos móveis */
-@media (max-width: 768px) {
   .devices-link img {
-    max-width: 180px; /* maior que o padrão */
-  }
-}
-
-/* Reduz tamanho da fonte geral em dispositivos móveis */
-@media (max-width: 768px) {
-  body {
-    font-size: 0.9em;
-  }
-  h1, h2, h3, h4 {
-    font-size: 0.9em;
-  }
-}
-
-/* Ajuste para telas muito pequenas */
-@media (max-width: 400px) {
-  .devices-link img {
-    max-width: 90vw; /* usa largura da tela */
+    max-width: 90vw;
   }
   body {
     font-size: 0.8em;
