@@ -1,1 +1,1 @@
-# Latent-Places
+# Latent-Relay
