@@ -165,3 +165,32 @@ h2 {
     font-size: 1.2em;
   }
 }
+/* Aumenta imagens dos links em dispositivos móveis */
+@media (max-width: 768px) {
+  .devices-link img {
+    max-width: 180px; /* maior que o padrão */
+  }
+}
+
+/* Reduz tamanho da fonte geral em dispositivos móveis */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9em;
+  }
+  h1, h2, h3, h4 {
+    font-size: 0.9em;
+  }
+}
+
+/* Ajuste para telas muito pequenas */
+@media (max-width: 400px) {
+  .devices-link img {
+    max-width: 90vw; /* usa largura da tela */
+  }
+  body {
+    font-size: 0.8em;
+  }
+  h1, h2, h3, h4 {
+    font-size: 0.8em;
+  }
+}
