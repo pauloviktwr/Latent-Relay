@@ -12,7 +12,6 @@
   --color-accent-purple-outline: rgba(176,167,252,0.6);
 }
 
-/* Fontes customizadas */
 @font-face {
   font-family: 'BPDotsPlus';
   src: url(assets/fonts/BPdotsPlus.otf) format('opentype');
@@ -36,16 +35,13 @@ a {
   cursor: pointer;
 }
 
-/* TITULOS RETRÔ E MENUS */
-h1, h2, h3, h4,
-.menu, .retro-title {
+h1, h2, h3, h4, .menu, .retro-title {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   letter-spacing: 2px;
   color: var(--color-primary);
   margin: 0 0 10px 0;
 }
 
-/* Header principal */
 .main-header {
   text-align: center;
   margin-top: 36px;
@@ -57,7 +53,6 @@ h1, h2, h3, h4,
   border-radius: 8px;
 }
 
-/* Texto introdutório */
 .intro-text {
   margin: 20px auto 24px auto;
   max-width: 540px;
@@ -69,7 +64,6 @@ h1, h2, h3, h4,
   font-size: 1em;
 }
 
-/* Títulos das sessões iniciais (cards/links principais da home) */
 .devices-link h2 {
   font-size: 1.7em;
   text-align: center;
@@ -78,7 +72,6 @@ h1, h2, h3, h4,
   margin: 10px 0 10px 0;
 }
 
-/* Cards dos links iniciais */
 .devices-link {
   margin: 0 auto 22px auto;
   border-radius: 8px;
@@ -90,7 +83,6 @@ h1, h2, h3, h4,
   max-width: 150px;
 }
 
-/* Imagens dos links iniciais */
 .devices-link img {
   display: block;
   border-radius: 12px;
@@ -125,7 +117,19 @@ h1, h2, h3, h4,
   box-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
-/* RESPONSIVO para tablets */
+/* AUMENTA DESCRIÇÃO DOS CARDS DAS SESSÕES */
+.devices-block p,
+.places-block p,
+.data-block p {
+  font-size: 1.14em;
+  line-height: 1.45;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  margin-top: 10px;
+  margin-bottom: 6px;
+}
+
+/* Responsivo para tablets */
 @media (max-width: 900px) {
   .main-header {
     font-size: 2em;
@@ -167,9 +171,14 @@ h1, h2, h3, h4,
   .devices-link h2 {
     font-size: 1.15em;
   }
+  .devices-block p,
+  .places-block p,
+  .data-block p {
+    font-size: 1.10em;
+  }
 }
 
-/* MOBILE: textos principais permanecem legíveis, cards e títulos não ficam pequenos */
+/* MOBILE: textos principais e descrição dos cards permanecem legíveis */
 @media (max-width: 460px) {
   .main-header {
     font-size: 1em;
@@ -200,5 +209,11 @@ h1, h2, h3, h4,
   .data-block {
     padding: 8px 2vw;
     font-size: 0.80em;
+  }
+  .devices-block p,
+  .places-block p,
+  .data-block p {
+    font-size: 1.06em;
+    line-height: 1.5;
   }
 }
