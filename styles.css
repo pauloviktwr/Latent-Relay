@@ -196,3 +196,15 @@ h4,
     margin-bottom: 12px;
   }
 }
+
+/* Added to unify text size on mobile across all pages */
+@media (max-width: 460px) {
+  body, html,
+  .intro-text,
+  .devices-block,
+  .places-block,
+  .data-block,
+  h1, h2, h3, h4, p, span {
+    font-size: 0.68em !important;
+  }
+}
