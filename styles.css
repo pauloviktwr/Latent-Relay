@@ -1,24 +1,15 @@
 :root {
-  --color-primary: #fff;
-  --color-primary-bg: rgba(255,255,255,0.06); 
-  --color-primary-outline: rgba(255,255,255,0.9);
   --color-bg-dark: #111112;
   --background-opacity-dark: rgba(17,17,18,0.92);
+  --color-primary: #fff;
+  --color-primary-bg: rgba(255,255,255,0.06);
+  --color-primary-outline: rgba(255,255,255,0.9);
+  --color-text: #fff;
   --color-accent-green: #c4fd55;
   --color-accent-green-bg: rgba(196,253,85,0.16);
   --color-accent-green-outline: rgba(196,253,85,0.62);
   --color-accent-purple: #b0a7fc;
   --color-accent-purple-outline: rgba(176,167,252,0.6);
-  --color-text: #fff;
-}
-
-a:link,
-a:visited,
-a:hover,
-a:active {
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 @font-face {
@@ -35,17 +26,20 @@ body {
   color: var(--color-text);
   margin: 0;
   padding: 0;
-  background-attachment: fixed; /* esta linha fixa o background */
+  background-attachment: fixed;
 }
 
-h1,
-h2,
-h3,
-h4,
-.menu,
-.retro-title {
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, .menu, .retro-title {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   letter-spacing: 2px;
+  color: var(--color-primary);
+  margin: 0 0 10px 0;
 }
 
 .main-header {
@@ -53,10 +47,9 @@ h4,
   margin-top: 36px;
   font-size: 2.5em;
   color: var(--color-primary);
-  outline-color: var(--color-primary-outline);
   background-color: var(--color-primary-bg);
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px 10px;
+  margin-bottom: 12px;
   border-radius: 8px;
 }
 
@@ -68,13 +61,19 @@ h4,
   border-radius: 8px;
   text-align: center;
   color: var(--color-primary);
-  margin-bottom: 10px;
   font-size: 1em;
 }
 
-/* Sessão dos links */
+.devices-link h2 {
+  font-size: 1.7em;
+  text-align: center;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  margin: 10px 0 10px 0;
+}
+
 .devices-link {
-  margin: 0 auto 20px auto;
+  margin: 0 auto 22px auto;
   border-radius: 8px;
   text-align: center;
   display: flex;
@@ -84,32 +83,29 @@ h4,
   max-width: 150px;
 }
 
-.devices-link a {
-  display: inline-block;
-}
-
-/* Imagens dos links */
 .devices-link img {
   display: block;
   border-radius: 12px;
-  margin: 0 auto 12px auto;
-  height: auto;
+  margin: 0 auto 10px auto;
   width: 100%;
   max-width: 150px;
   min-width: 80px;
+  height: auto;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
 }
 
-/* Título dos links */
-.devices-link h2 {
-  margin: 0;
-  font-size: 1.2em;
+.devices-block,
+.places-block,
+.data-block {
+  max-width: 720px;
+  margin: 20px auto;
+  padding: 14px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 12px;
+  color: var(--color-text);
   text-align: center;
-  letter-spacing: 2px;
-  color: var(--color-primary);
-  width: 100%;
 }
 
-/* Conteúdo das sessões interiores */
 .devices-block img,
 .places-block img,
 .data-block img {
@@ -121,90 +117,103 @@ h4,
   box-shadow: 0 2px 12px rgba(0,0,0,0.4);
 }
 
-.devices-block,
-.places-block,
-.data-block {
-  max-width: 720px;
-  margin: 20px auto;
-  padding: 12px;
-  background: rgba(0,0,0,0.25);
-  border-radius: 12px;
-  color: var(--color-text);
-  text-align: center;
+/* AUMENTA DESCRIÇÃO DOS CARDS DAS SESSÕES */
+.devices-block p,
+.places-block p,
+.data-block p {
+  font-size: 1.14em;
+  line-height: 1.45;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+  margin-top: 10px;
+  margin-bottom: 6px;
 }
 
-/* Responsivo para tablets e celulares */
+/* Responsivo para tablets */
 @media (max-width: 900px) {
   .main-header {
     font-size: 2em;
-    margin-top: 20px;
+    margin-top: 22px;
   }
   .intro-text {
     font-size: 0.95em;
-    max-width: 92vw;
+    max-width: 95vw;
     padding: 10px 4vw;
   }
-  h2 {
-    font-size: 1.1em;
-    max-width: 88vw;
-  }
   .devices-link {
     max-width: 180px;
   }
   .devices-link img {
     max-width: 180px;
   }
+  .devices-link h2 {
+    font-size: 1.3em;
+  }
 }
 
+/* Celulares */
 @media (max-width: 600px) {
+  .main-header {
+    font-size: 1.15em;
+    margin-top: 10px;
+  }
   .intro-text {
     font-size: 0.82em;
-    max-width: 96vw;
-    padding: 10px 2vw;
+    max-width: 98vw;
+    padding: 9px 2vw;
   }
   .devices-link {
-    max-width: 240px;
+    max-width: 220px;
   }
   .devices-link img {
-    max-width: 210px;
+    max-width: 180px;
+  }
+  .devices-link h2 {
+    font-size: 1.15em;
+  }
+  .devices-block p,
+  .places-block p,
+  .data-block p {
+    font-size: 1.10em;
   }
 }
 
-/* MOBILE: garante imagem grande e fonte pequena em telas ≤460px */
+/* MOBILE: textos principais e descrição dos cards permanecem legíveis */
 @media (max-width: 460px) {
   .main-header {
-    font-size: 1.07em;
-    margin-top: 12px;
+    font-size: 1em;
+    margin-top: 6px;
   }
   .intro-text {
-    font-size: 0.68em;
-    max-width: 95vw;
-    padding: 8px 2vw;
-  }
-  h2, h3, h4 {
-    font-size: 0.9em;
+    font-size: 0.74em;
+    max-width: 97vw;
+    padding: 7px 2vw;
   }
   .devices-link {
-    width: 99vw;
+    width: 97vw;
     max-width: none;
   }
   .devices-link img {
-    width: 70vw;       /* reduz de 90vw para 70vw */
-    max-width: 250px;  /* reduz de 320px para 250px */
+    width: 66vw;
+    max-width: 160px;
     min-width: 60px;
-    height: auto;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
-}
-
-/* Added to unify text size on mobile across all pages */
-@media (max-width: 460px) {
-  body, html,
-  .intro-text,
+  .devices-link h2 {
+    font-size: 1.05em;
+    margin-top: 6px;
+    margin-bottom: 8px;
+  }
   .devices-block,
   .places-block,
-  .data-block,
-  h1, h2, h3, h4, p, span {
-    font-size: 0.68em !important;
+  .data-block {
+    padding: 8px 2vw;
+    font-size: 0.80em;
+  }
+  .devices-block p,
+  .places-block p,
+  .data-block p {
+    font-size: 1.06em;
+    line-height: 1.5;
   }
 }
