@@ -14,14 +14,14 @@
 
 @font-face {
   font-family: 'BPDotsPlus';
-  src: url(assets/fonts/BPdotsPlus.otf) format('opentype');
+  src: url(/assets/fonts/BPdotsPlus.otf) format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
-  background: url('assets/background.png') no-repeat center center fixed;
+  background: url('/assets/background.png') no-repeat center center fixed;
   background-size: cover;
   color: var(--color-text);
   margin: 0;
