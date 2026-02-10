@@ -8,6 +8,13 @@
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">INITIALIZING BRIDGE RELAY...</p>
+    </div>
+  </div>
   <a href="/index.html" class="main-header-link">
     <div class="main-header">Bridge Relay</div>
   </a>
@@ -36,5 +43,18 @@ BRIDGE RELAY IS THE HUB TO LINK UP, SHARE DATA, TRADE OLD DEVICES, AND DISCUSS T
     </a>
     <h2>data</h2>
   </div>
+
+  <script>
+    // Hide loading screen when page is fully loaded
+    window.addEventListener('load', function() {
+      const loadingScreen = document.getElementById('loading-screen');
+      loadingScreen.classList.add('fade-out');
+      
+      // Remove the loading screen from DOM after animation completes
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
