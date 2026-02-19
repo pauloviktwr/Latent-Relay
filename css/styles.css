@@ -10,6 +10,10 @@
   --color-accent-green-outline: rgba(196,253,85,0.62);
   --color-accent-purple: #b0a7fc;
   --color-accent-purple-outline: rgba(176,167,252,0.6);
+  
+  /* Card sizing variables */
+  --card-nav-max-width: 350px;
+  --card-content-max-width: 720px;
 }
 
 @font-face {
@@ -45,7 +49,7 @@ h1, h2, h3, h4, .menu, .retro-title {
 .main-header {
   text-align: center;
   margin-top: 36px;
-  font-size: 2.5em;
+  font-size: 4em;
   color: var(--color-primary);
   background-color: var(--color-primary-bg);
   padding: 12px 10px;
@@ -55,13 +59,21 @@ h1, h2, h3, h4, .menu, .retro-title {
 
 .intro-text {
   margin: 20px auto 24px auto;
-  max-width: 540px;
+  max-width: 1100px;
   background: var(--background-opacity-dark);
   padding: 14px 24px;
   border-radius: 8px;
   text-align: center;
   color: var(--color-primary);
-  font-size: 1em;
+  font-size: 2em;
+}
+
+/* Base card styles - common to all card-based elements */
+.card {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 
 .devices-link h2 {
@@ -75,12 +87,11 @@ h1, h2, h3, h4, .menu, .retro-title {
 .devices-link {
   margin: 0 auto 22px auto;
   border-radius: 8px;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  max-width: 150px;
+  max-width: var(--card-nav-max-width);
+  height: auto;
 }
 
 .devices-link img {
@@ -88,7 +99,7 @@ h1, h2, h3, h4, .menu, .retro-title {
   border-radius: 12px;
   margin: 0 auto 10px auto;
   width: 100%;
-  max-width: 150px;
+  max-width: var(--card-nav-max-width);
   min-width: 80px;
   height: auto;
   box-shadow: 0 2px 12px rgba(0,0,0,0.35);
@@ -97,13 +108,12 @@ h1, h2, h3, h4, .menu, .retro-title {
 .devices-block,
 .places-block,
 .data-block {
-  max-width: 720px;
+  max-width: var(--card-content-max-width);
   margin: 20px auto;
   padding: 14px;
   background: rgba(0,0,0,0.25);
   border-radius: 12px;
   color: var(--color-text);
-  text-align: center;
 }
 
 .devices-block img,
@@ -131,6 +141,10 @@ h1, h2, h3, h4, .menu, .retro-title {
 
 /* Responsivo para tablets */
 @media (max-width: 900px) {
+  :root {
+    --card-nav-max-width: 250px;
+    --card-content-max-width: 680px;
+  }
   .main-header {
     font-size: 2em;
     margin-top: 22px;
@@ -140,12 +154,6 @@ h1, h2, h3, h4, .menu, .retro-title {
     max-width: 95vw;
     padding: 10px 4vw;
   }
-  .devices-link {
-    max-width: 180px;
-  }
-  .devices-link img {
-    max-width: 180px;
-  }
   .devices-link h2 {
     font-size: 1.3em;
   }
@@ -153,6 +161,10 @@ h1, h2, h3, h4, .menu, .retro-title {
 
 /* Celulares */
 @media (max-width: 600px) {
+  :root {
+    --card-nav-max-width: 280px;
+    --card-content-max-width: 95vw;
+  }
   .main-header {
     font-size: 1.15em;
     margin-top: 10px;
@@ -161,9 +173,6 @@ h1, h2, h3, h4, .menu, .retro-title {
     font-size: 0.82em;
     max-width: 98vw;
     padding: 9px 2vw;
-  }
-  .devices-link {
-    max-width: 220px;
   }
   .devices-link img {
     max-width: 180px;
@@ -180,6 +189,10 @@ h1, h2, h3, h4, .menu, .retro-title {
 
 /* MOBILE: textos principais e descrição dos cards permanecem legíveis */
 @media (max-width: 460px) {
+  :root {
+    --card-nav-max-width: 97vw;
+    --card-content-max-width: 97vw;
+  }
   .main-header {
     font-size: 1em;
     margin-top: 6px;
@@ -191,7 +204,6 @@ h1, h2, h3, h4, .menu, .retro-title {
   }
   .devices-link {
     width: 97vw;
-    max-width: none;
   }
   .devices-link img {
     width: 66vw;
