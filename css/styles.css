@@ -65,7 +65,7 @@ h1, h2, h3, h4, .menu, .retro-title {
   border-radius: 8px;
   text-align: center;
   color: var(--color-primary);
-  font-size: 2.5em;
+  font-size: 1.5em;
 }
 
 /* Base card styles - common to all card-based elements */
