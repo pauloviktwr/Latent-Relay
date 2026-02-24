@@ -1,0 +1,19 @@
+<div class="container">
+  <a routerLink="/" class="main-header-link">
+    <div class="main-header">Bridge Relay</div>
+  </a>
+  
+  <div class="intro-text">
+    DEVICES<br>
+    EXPLORE THE HIDDEN NETWORK OF OUTDATED COMMUNICATION DEVICES.<br>
+    HERE, YOU CAN SHARE INFORMATION AND PHOTOS ABOUT RARE PHONES, RADIOS, OR GADGETS, AND HELP KEEP THE RELAY ALIVE.
+  </div>
+  
+  <section class="session-content">
+    <h2>Device List</h2>
+    <div *ngFor="let device of devices" class="devices-block">
+      <img [src]="device.image" [alt]="device.alt" />
+      <p>{{ device.description }}</p>
+    </div>
+  </section>
+</div>
