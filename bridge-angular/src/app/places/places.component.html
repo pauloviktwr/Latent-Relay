@@ -1,0 +1,19 @@
+<div class="container">
+  <a routerLink="/" class="main-header-link">
+    <div class="main-header">Bridge Relay</div>
+  </a>
+  
+  <div class="intro-text">
+    PLACES<br>
+    DISCOVER STRANGE, DISCONNECTED OR MYSTERIOUS SITES ON OUR COASTLINES AND SKYLINES.<br>
+    SHARE NEW LOCATIONS, SIGHTINGS OR PHENOMENA YOU'VE ENCOUNTERED.
+  </div>
+  
+  <section class="session-content">
+    <h2>Featured Places</h2>
+    <div *ngFor="let place of places" class="places-block">
+      <img [src]="place.image" [alt]="place.alt" />
+      <p>{{ place.description }}</p>
+    </div>
+  </section>
+</div>

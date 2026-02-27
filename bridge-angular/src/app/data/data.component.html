@@ -1,0 +1,19 @@
+<div class="container">
+  <a routerLink="/" class="main-header-link">
+    <div class="main-header">Bridge Relay</div>
+  </a>
+  
+  <div class="intro-text">
+    DATA<br>
+    ARCHIVE AND DISCUSS DIGITAL TRACES, ENCODED SIGNALS, MAPS, AND SCHEMA WITHIN THE LATENT NETWORK.<br>
+    COLLABORATE TO DECODE PHENOMENA DETECTED BY OUR COMMUNITY.
+  </div>
+  
+  <section class="session-content">
+    <h2>Data Submissions</h2>
+    <div *ngFor="let item of dataItems" class="data-block">
+      <img [src]="item.image" [alt]="item.alt" />
+      <p>{{ item.description }}</p>
+    </div>
+  </section>
+</div>
