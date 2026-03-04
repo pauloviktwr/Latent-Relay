@@ -10,7 +10,7 @@
   --color-accent-green-outline: rgba(196,253,85,0.62);
   --color-accent-purple: #b0a7fc;
   --color-accent-purple-outline: rgba(176,167,252,0.6);
-  
+
   /* Card sizing variables */
   --card-nav-max-width: 350px;
   --card-content-max-width: 720px;
@@ -162,7 +162,7 @@ h1, h2, h3, h4, .menu, .retro-title {
 /* Celulares */
 @media (max-width: 600px) {
   :root {
-    --card-nav-max-width: 280px;
+    --card-nav-max-width: 90vw;
     --card-content-max-width: 95vw;
   }
   .main-header {
@@ -175,7 +175,7 @@ h1, h2, h3, h4, .menu, .retro-title {
     padding: 9px 2vw;
   }
   .devices-link img {
-    max-width: 180px;
+    max-width: 80vw;
   }
   .devices-link h2 {
     font-size: 1.15em;
@@ -206,9 +206,9 @@ h1, h2, h3, h4, .menu, .retro-title {
     width: 97vw;
   }
   .devices-link img {
-    width: 66vw;
-    max-width: 160px;
-    min-width: 60px;
+    width: 75vw;
+    max-width: 200px;
+    min-width: 70px;
     margin-bottom: 10px;
   }
   .devices-link h2 {
