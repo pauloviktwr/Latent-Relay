@@ -60,12 +60,21 @@ h1, h2, h3, h4, .menu, .retro-title {
 .intro-text {
   margin: 20px auto 24px auto;
   max-width: 1100px;
-  background: var(--background-opacity-dark);
+  line-height: 1.5;  /* Espaço natural Exo */
+  /* background: var(--background-opacity-dark); */
   padding: 14px 24px;
   border-radius: 8px;
   text-align: center;
   color: var(--color-primary);
   font-size: 1.5em;
+}
+
+.intro-highlight {
+  display: inline;
+  background: var(--color-bg-dark);
+  padding: 2px 4px;              /* Mínimo como Exo */
+  /* SEM margin-bottom ou box-shadow extra */
+  line-height: inherit;          /* Herda do .intro-text */
 }
 
 /* Base card styles - common to all card-based elements */
