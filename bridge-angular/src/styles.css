@@ -1,3 +1,9 @@
+/* ========================================
+   BRIDGE RELAY - GLOBAL STYLES (COMPLETE)
+   Zero duplication - all components empty
+   Unified .card for devices/places/data
+========================================= */
+
 :root {
   --color-bg-dark: #111112;
   --background-opacity-dark: rgba(17,17,18,0.92);
@@ -23,6 +29,7 @@
   font-style: normal;
 }
 
+/* Base styles */
 body {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   background: url('/assets/background.png') no-repeat center center fixed;
@@ -39,13 +46,28 @@ a {
   cursor: pointer;
 }
 
-h1, h2, h3, h4, .menu, .retro-title {
+h1, h2, h3, h4 {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   letter-spacing: 2px;
   color: var(--color-primary);
   margin: 0 0 10px 0;
 }
 
+/* ========================================
+   GLOBAL COMPONENT LAYOUT (Replaces :host)
+========================================= */
+app-home, app-data, app-devices, app-places, app-page {
+  display: block !important;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* ========================================
+   MAIN HEADER (All pages)
+========================================= */
 .main-header {
   text-align: center;
   margin-top: 36px;
@@ -55,188 +77,174 @@ h1, h2, h3, h4, .menu, .retro-title {
   padding: 12px 10px;
   margin-bottom: 12px;
   border-radius: 8px;
+  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer;
 }
 
+/* ========================================
+   EXO PORTAL INTRO-TEXT (Line-by-line highlights)
+========================================= */
 .intro-text {
   margin: 20px auto 24px auto;
   max-width: 1100px;
-  background: var(--background-opacity-dark);
-  padding: 14px 24px;
-  border-radius: 8px;
   text-align: center;
   color: var(--color-primary);
   font-size: 1.5em;
+  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
+  line-height: 1.5; /* Exact Exo spacing */
 }
 
-/* Base card styles - common to all card-based elements */
-.card {
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
+.intro-text p {
+  margin: 0;
+}
+
+.intro-highlight {
+  display: inline;
+  background: #bbbbbb;           /* Exo exact color */
+  padding: 2px 4px 8px 4px;      /* Creates line gaps */
+  line-height: inherit;
+}
+
+/* ========================================
+   HOME NAVIGATION GRID
+========================================= */
+.navigation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto 0;
+  padding: 0 20px;
+}
+
+.nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   border-radius: 8px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.25);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
-.devices-link h2 {
+.nav-link:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.nav-link img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.nav-link h2 {
   font-size: 1.7em;
   text-align: center;
   letter-spacing: 2px;
   color: var(--color-primary);
-  margin: 10px 0 10px 0;
+  margin: 0;
+  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
 }
 
-.devices-link {
-  margin: 0 auto 22px auto;
-  border-radius: 8px;
+/* ========================================
+   UNIFIED CARD SYSTEM (Devices/Places/Data)
+========================================= */
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: var(--card-nav-max-width);
-  height: auto;
-}
-
-.devices-link img {
-  display: block;
-  border-radius: 12px;
-  margin: 0 auto 10px auto;
-  width: 100%;
-  max-width: var(--card-nav-max-width);
-  min-width: 80px;
-  height: auto;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
-}
-
-.devices-block,
-.places-block,
-.data-block {
-  max-width: var(--card-content-max-width);
-  margin: 20px auto;
-  padding: 14px;
+  margin: 30px auto;
+  max-width: 500px;
+  text-align: center;
   background: rgba(0,0,0,0.25);
   border-radius: 12px;
-  color: var(--color-text);
-}
-
-.devices-block img,
-.places-block img,
-.data-block img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 12px;
+  padding: 16px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
-/* AUMENTA DESCRIÇÃO DOS CARDS DAS SESSÕES */
-.devices-block p,
-.places-block p,
-.data-block p {
-  font-size: 1.14em;
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1.1em;
   line-height: 1.45;
   color: var(--color-primary);
-  letter-spacing: 0.02em;
-  margin-top: 10px;
-  margin-bottom: 6px;
+  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
+  margin: 0;
 }
 
-/* Responsivo para tablets */
+/* ========================================
+   SESSION CONTAINERS (Page-specific)
+========================================= */
+.session-content,
+.devices-container,
+.places-container {
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.session-content h2,
+.devices-header,
+.places-header {
+  font-size: 2em;
+  color: var(--color-primary);
+  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
+  letter-spacing: 2px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+========================================= */
 @media (max-width: 900px) {
   :root {
     --card-nav-max-width: 250px;
     --card-content-max-width: 680px;
   }
-  .main-header {
-    font-size: 2em;
-    margin-top: 22px;
-  }
-  .intro-text {
-    font-size: 0.95em;
-    max-width: 95vw;
-    padding: 10px 4vw;
-  }
-  .devices-link h2 {
-    font-size: 1.3em;
-  }
+  .main-header { font-size: 2em; margin-top: 22px; }
+  .intro-text { font-size: 0.95em; max-width: 95vw; padding: 10px 4vw; }
 }
 
-/* Celulares */
+@media (max-width: 768px) {
+  .main-header { font-size: 2.5em; }
+  .intro-text { font-size: 1em; }
+  .navigation-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 600px) {
-  :root {
-    --card-nav-max-width: 280px;
-    --card-content-max-width: 95vw;
-  }
-  .main-header {
-    font-size: 1.15em;
-    margin-top: 10px;
-  }
-  .intro-text {
-    font-size: 0.82em;
-    max-width: 98vw;
-    padding: 9px 2vw;
-  }
-  .devices-link img {
-    max-width: 180px;
-  }
-  .devices-link h2 {
-    font-size: 1.15em;
-  }
-  .devices-block p,
-  .places-block p,
-  .data-block p {
-    font-size: 1.10em;
-  }
+  :root { --card-nav-max-width: 280px; --card-content-max-width: 95vw; }
+  .main-header { font-size: 1.15em; margin-top: 10px; }
+  .intro-text { font-size: 0.82em; max-width: 98vw; padding: 9px 2vw; }
 }
 
-/* MOBILE: textos principais e descrição dos cards permanecem legíveis */
 @media (max-width: 460px) {
-  :root {
-    --card-nav-max-width: 97vw;
-    --card-content-max-width: 97vw;
-  }
-  .main-header {
-    font-size: 1em;
-    margin-top: 6px;
-  }
-  .intro-text {
-    font-size: 0.74em;
-    max-width: 97vw;
-    padding: 7px 2vw;
-  }
-  .devices-link {
-    width: 97vw;
-  }
-  .devices-link img {
-    width: 66vw;
-    max-width: 160px;
-    min-width: 60px;
-    margin-bottom: 10px;
-  }
-  .devices-link h2 {
-    font-size: 1.05em;
-    margin-top: 6px;
-    margin-bottom: 8px;
-  }
-  .devices-block,
-  .places-block,
-  .data-block {
-    padding: 8px 2vw;
-    font-size: 0.80em;
-  }
-  .devices-block p,
-  .places-block p,
-  .data-block p {
-    font-size: 1.06em;
-    line-height: 1.5;
-  }
+  :root { --card-nav-max-width: 97vw; --card-content-max-width: 97vw; }
+  .main-header { font-size: 1em; margin-top: 6px; }
+  .intro-text { font-size: 0.74em; max-width: 97vw; padding: 7px 2vw; }
 }
 
-/* Loading Screen Animation */
+/* ========================================
+   LOADING ANIMATION
+========================================= */
 .loading-screen {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: var(--color-bg-dark);
   display: flex;
   justify-content: center;
@@ -251,48 +259,7 @@ h1, h2, h3, h4, .menu, .retro-title {
   pointer-events: none;
 }
 
-.loading-container {
-  text-align: center;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.loading-container.show {
-  opacity: 1;
-}
-
-.loading-spinner {
-  width: 60px;
-  height: 60px;
-  border: 4px solid rgba(196, 253, 85, 0.2);
-  border-top: 4px solid var(--color-accent-green);
-  border-radius: 50%;
-  margin: 0 auto 20px auto;
-  animation: spin 3s linear infinite;
-}
-
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-.loading-text {
-  color: var(--color-accent-green);
-  font-size: 1.2em;
-  letter-spacing: 2px;
-  margin: 0;
-  animation: pulse 1s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
