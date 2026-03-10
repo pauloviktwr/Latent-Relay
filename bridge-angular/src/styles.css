@@ -188,21 +188,17 @@ app-home, app-data, app-devices, app-places, app-page {
 }
 
 /* ========================================
-   SESSION CONTAINERS (Page-specific)
+   SESSION CONTAINER (Unified - Clean)
 ========================================= */
-.session-content,
-.devices-container,
-.places-container {
+.session-content {
   max-width: 1100px;
   margin: 40px auto 0;
 }
 
-.session-content h2,
-.devices-header,
-.places-header {
+.session-content h2 {
   font-size: 2em;
-  color: var(--color-primary);
-  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
+  color: var(--color-primary);  /* TODOS brancos */
+  font-family: 'BPDotsPlus', monospace;
   letter-spacing: 2px;
   margin: 20px 0;
   text-align: center;

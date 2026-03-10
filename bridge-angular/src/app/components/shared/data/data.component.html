@@ -11,7 +11,7 @@
   
   <section class="session-content">
     <h2>Data Submissions</h2>
-    <div *ngFor="let item of dataItems" class="data-block">
+    <div *ngFor="let item of dataItems" class="card">
       <img [src]="item.image" [alt]="item.alt" />
       <p>{{ item.description }}</p>
     </div>

@@ -11,7 +11,7 @@
   
   <section class="session-content">
     <h2>Featured Places</h2>
-    <div *ngFor="let place of places" class="places-block">
+    <div *ngFor="let place of places" class="card">
       <img [src]="place.image" [alt]="place.alt" />
       <p>{{ place.description }}</p>
     </div>
