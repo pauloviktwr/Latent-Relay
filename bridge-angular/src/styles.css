@@ -1,25 +1,21 @@
-/* ========================================
-   BRIDGE RELAY - GLOBAL STYLES (COMPLETE)
-   Zero duplication - all components empty
-   Unified .card for devices/places/data
-========================================= */
-
 :root {
   --color-bg-dark: #111112;
-  --background-opacity-dark: rgba(17,17,18,0.92);
+  --background-opacity-dark: rgba(17, 17, 18, 0.92);
   --color-primary: #fff;
-  --color-primary-bg: rgba(255,255,255,0.06);
-  --color-primary-outline: rgba(255,255,255,0.9);
+  --color-primary-bg: rgba(255, 255, 255, 0.06);
+  --color-primary-outline: rgba(255, 255, 255, 0.9);
   --color-text: #fff;
   --color-accent-green: #c4fd55;
-  --color-accent-green-bg: rgba(196,253,85,0.16);
-  --color-accent-green-outline: rgba(196,253,85,0.62);
+  --color-accent-green-bg: rgba(196, 253, 85, 0.16);
+  --color-accent-green-outline: rgba(196, 253, 85, 0.62);
   --color-accent-purple: #b0a7fc;
-  --color-accent-purple-outline: rgba(176,167,252,0.6);
-  
-  /* Card sizing variables */
+  --color-accent-purple-outline: rgba(176, 167, 252, 0.6);
   --card-nav-max-width: 350px;
   --card-content-max-width: 720px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -29,7 +25,6 @@
   font-style: normal;
 }
 
-/* Base styles */
 body {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   background: url('/assets/background.png') no-repeat center center fixed;
@@ -37,7 +32,6 @@ body {
   color: var(--color-text);
   margin: 0;
   padding: 0;
-  background-attachment: fixed;
 }
 
 a {
@@ -46,103 +40,60 @@ a {
   cursor: pointer;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .menu, .retro-title {
   font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
   letter-spacing: 2px;
   color: var(--color-primary);
   margin: 0 0 10px 0;
 }
 
-/* ========================================
-   GLOBAL COMPONENT LAYOUT (Replaces :host)
-========================================= */
-app-home, app-data, app-devices, app-places, app-page {
-  display: block !important;
-  width: 100%;
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-/* ========================================
-   MAIN HEADER (All pages)
-========================================= */
 .main-header {
   text-align: center;
   margin-top: 36px;
-  font-size: 4em;
+  font-size: clamp(1.4rem, 4vw, 4rem);
   color: var(--color-primary);
   background-color: var(--color-primary-bg);
   padding: 12px 10px;
   margin-bottom: 12px;
   border-radius: 8px;
-  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
-  letter-spacing: 2px;
-  cursor: pointer;
 }
 
-/* ========================================
-   EXO PORTAL INTRO-TEXT (Line-by-line highlights)
-========================================= */
 .intro-text {
   margin: 20px auto 24px auto;
   max-width: 1100px;
+  background: var(--background-opacity-dark);
+  padding: 14px 24px;
+  border-radius: 8px;
   text-align: center;
   color: var(--color-primary);
-  font-size: 1.5em;
-  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
-  line-height: 1.5; /* Exact Exo spacing */
+  font-size: clamp(0.95rem, 1.8vw, 1.5rem);
+  line-height: 1.5;
 }
 
-.intro-text p {
-  margin: 0;
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
 }
 
-.intro-highlight {
-  display: inline;
-  background: #bbbbbb;           /* Exo exact color */
-  padding: 2px 4px 8px 4px;      /* Creates line gaps */
-  line-height: inherit;
-}
-
-/* ========================================
-   HOME NAVIGATION GRID
-========================================= */
 .navigation-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  max-width: 1000px;
-  margin: 40px auto 0;
-  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 10px;
 }
 
 .nav-link {
+  margin: 0;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  border-radius: 8px;
-  overflow: hidden;
-  background: rgba(0,0,0,0.25);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.nav-link:hover {
-  transform: scale(1.05);
-  opacity: 0.9;
-}
-
-.nav-link img {
+  max-width: var(--card-nav-max-width);
   width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  height: auto;
+  cursor: pointer;
 }
 
 .nav-link h2 {
@@ -150,112 +101,148 @@ app-home, app-data, app-devices, app-places, app-page {
   text-align: center;
   letter-spacing: 2px;
   color: var(--color-primary);
-  margin: 0;
-  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
+  margin: 10px 0;
 }
 
-/* ========================================
-   UNIFIED CARD SYSTEM (Devices/Places/Data)
-========================================= */
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 30px auto;
-  max-width: 500px;
-  text-align: center;
-  background: rgba(0,0,0,0.25);
+.nav-link img {
+  display: block;
   border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.card img {
+  margin: 0 auto 10px auto;
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  max-width: var(--card-nav-max-width);
+  height: auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
-.card p {
-  font-size: 1.1em;
+.page-card,
+.devices-block,
+.places-block,
+.data-block {
+  max-width: var(--card-content-max-width);
+  margin: 20px auto;
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  color: var(--color-text);
+}
+
+.page-card img,
+.devices-block img,
+.places-block img,
+.data-block img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.page-card p,
+.devices-block p,
+.places-block p,
+.data-block p {
+  font-size: 1.14em;
   line-height: 1.45;
   color: var(--color-primary);
-  font-family: 'BPDotsPlus', monospace, Arial, sans-serif;
-  margin: 0;
+  letter-spacing: 0.02em;
+  margin-top: 10px;
+  margin-bottom: 6px;
 }
 
-/* ========================================
-   SESSION CONTAINER (Unified - Clean)
-========================================= */
-.session-content {
-  max-width: 1100px;
-  margin: 40px auto 0;
-}
-
-.session-content h2 {
-  font-size: 2em;
-  color: var(--color-primary);  /* TODOS brancos */
-  font-family: 'BPDotsPlus', monospace;
-  letter-spacing: 2px;
-  margin: 20px 0;
-  text-align: center;
-}
-
-/* ========================================
-   RESPONSIVE BREAKPOINTS
-========================================= */
 @media (max-width: 900px) {
   :root {
     --card-nav-max-width: 250px;
     --card-content-max-width: 680px;
   }
-  .main-header { font-size: 2em; margin-top: 22px; }
-  .intro-text { font-size: 0.95em; max-width: 95vw; padding: 10px 4vw; }
-}
 
-@media (max-width: 768px) {
-  .main-header { font-size: 2.5em; }
-  .intro-text { font-size: 1em; }
-  .navigation-grid { grid-template-columns: 1fr; }
+  .main-header {
+    margin-top: 22px;
+  }
+
+  .intro-text {
+    padding: 10px 4vw;
+  }
+
+  .nav-link h2 {
+    font-size: 1.3em;
+  }
 }
 
 @media (max-width: 600px) {
-  :root { --card-nav-max-width: 280px; --card-content-max-width: 95vw; }
-  .main-header { font-size: 1.15em; margin-top: 10px; }
-  .intro-text { font-size: 0.82em; max-width: 98vw; padding: 9px 2vw; }
+  :root {
+    --card-nav-max-width: 280px;
+    --card-content-max-width: 95vw;
+  }
+
+  .main-header {
+    margin-top: 10px;
+  }
+
+  .intro-text {
+    padding: 9px 2vw;
+  }
+
+  .nav-link img {
+    max-width: 180px;
+  }
+
+  .nav-link h2 {
+    font-size: 1.15em;
+  }
+
+  .page-card p,
+  .devices-block p,
+  .places-block p,
+  .data-block p {
+    font-size: 1.1em;
+  }
 }
 
 @media (max-width: 460px) {
-  :root { --card-nav-max-width: 97vw; --card-content-max-width: 97vw; }
-  .main-header { font-size: 1em; margin-top: 6px; }
-  .intro-text { font-size: 0.74em; max-width: 97vw; padding: 7px 2vw; }
-}
+  :root {
+    --card-nav-max-width: 97vw;
+    --card-content-max-width: 97vw;
+  }
 
-/* ========================================
-   LOADING ANIMATION
-========================================= */
-.loading-screen {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: var(--color-bg-dark);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 3s ease-in-out;
-}
+  .main-header {
+    margin-top: 6px;
+  }
 
-.loading-screen.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
+  .intro-text {
+    padding: 7px 2vw;
+  }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  .nav-link {
+    width: 97vw;
+  }
+
+  .nav-link img {
+    width: 66vw;
+    max-width: 160px;
+    min-width: 60px;
+    margin-bottom: 10px;
+  }
+
+  .nav-link h2 {
+    font-size: 1.05em;
+    margin-top: 6px;
+    margin-bottom: 8px;
+  }
+
+  .page-card,
+  .devices-block,
+  .places-block,
+  .data-block {
+    padding: 8px 2vw;
+    font-size: 0.8em;
+  }
+
+  .page-card p,
+  .devices-block p,
+  .places-block p,
+  .data-block p {
+    font-size: 1.06em;
+    line-height: 1.5;
+  }
 }

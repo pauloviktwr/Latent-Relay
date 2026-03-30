@@ -1,27 +1,14 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-devices',
-  standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [RouterLink],
   templateUrl: './devices.component.html',
-  styleUrl: './devices.component.css'
+  styleUrl: './devices.component.css',
 })
 export class DevicesComponent {
-  devices = [
-    {
-      id: 1,
-      image: '/assets/devices/ressonance.jpg',
-      alt: 'Resonance Device',
-      description: 'Example device description and user-submitted info...'
-    },
-    {
-      id: 2,
-      image: '/assets/black.jpg',
-      alt: 'Black Device',
-      description: 'Example device description and user-submitted info...'
-    }
+  deviceItems = [
+    { id: 1, image: 'assets/devices/ctrlaltdel.jpg', alt: 'Devices', description: 'EXPLORE EQUIPMENT, TERMINALS, AND VINTAGE HARDWARE USED IN THE FIELD.' },
   ];
 }

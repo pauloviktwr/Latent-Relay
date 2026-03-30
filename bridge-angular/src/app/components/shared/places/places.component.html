@@ -1,19 +1,22 @@
-<div class="container">
+<div class="container main-container py-4">
   <a routerLink="/" class="main-header-link">
     <div class="main-header">Bridge Relay</div>
   </a>
-  
+
   <div class="intro-text">
-    PLACES<br>
-    DISCOVER STRANGE, DISCONNECTED OR MYSTERIOUS SITES ON OUR COASTLINES AND SKYLINES.<br>
-    SHARE NEW LOCATIONS, SIGHTINGS OR PHENOMENA YOU'VE ENCOUNTERED.
+    <p>
+      MAPS, OUTPOSTS, AND LOCATIONS WHERE STRANGE SIGNALS AND EVENTS WERE REPORTED.
+    </p>
   </div>
-  
-  <section class="session-content">
-    <h2>Featured Places</h2>
-    <div *ngFor="let place of places" class="card">
-      <img [src]="place.image" [alt]="place.alt" />
-      <p>{{ place.description }}</p>
-    </div>
-  </section>
+
+  <div class="row g-4 justify-content-center">
+    @for (item of placeItems; track item.id) {
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="page-card">
+          <img class="img-fluid" [src]="item.image" [alt]="item.alt">
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
 </div>

@@ -1,19 +1,22 @@
-<div class="container">
+<div class="container main-container py-4">
   <a routerLink="/" class="main-header-link">
     <div class="main-header">Bridge Relay</div>
   </a>
-  
+
   <div class="intro-text">
-    DEVICES<br>
-    EXPLORE THE HIDDEN NETWORK OF OUTDATED COMMUNICATION DEVICES.<br>
-    HERE, YOU CAN SHARE INFORMATION AND PHOTOS ABOUT RARE PHONES, RADIOS, OR GADGETS, AND HELP KEEP THE RELAY ALIVE.
+    <p>
+      TRADE OLD HARDWARE, ANALOG TOOLS, AND UNUSUAL MACHINES CONNECTED TO THE RELAY NETWORK.
+    </p>
   </div>
-  
-  <section class="session-content">
-    <h2>Device List</h2>
-    <div *ngFor="let device of devices" class="card">
-      <img [src]="device.image" [alt]="device.alt" />
-      <p>{{ device.description }}</p>
-    </div>
-  </section>
+
+  <div class="row g-4 justify-content-center">
+    @for (item of deviceItems; track item.id) {
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="page-card">
+          <img class="img-fluid" [src]="item.image" [alt]="item.alt">
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
 </div>

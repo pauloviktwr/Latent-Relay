@@ -1,8 +1,6 @@
-<!-- Bridge Relay Home Page -->
-
-<div class="main-container">
+<div class="container main-container py-4">
   <div class="main-header">Bridge Relay</div>
-  
+
   <div class="intro-text">
     <p>
       WELCOME TO THE BRIDGE RELAY.<br>
@@ -11,19 +9,15 @@
       BRIDGE RELAY IS THE HUB TO LINK UP, SHARE DATA, TRADE OLD DEVICES, AND DISCUSS THESE UNEXPLAINED PHENOMENA.
     </p>
   </div>
-  
-  <div class="navigation-grid">
-    <div class="nav-link" routerLink="/devices">
-      <img src="/assets/devices/ctrlaltdel.jpg" alt="Devices" />
-      <h2>devices</h2>
-    </div>
-    <div class="nav-link" routerLink="/places">
-      <img src="/assets/places/bf74ee5a968e67e0de2abafb115f2e52.jpg" alt="Places" />
-      <h2>places</h2>
-    </div>
-    <div class="nav-link" routerLink="/data">
-      <img src="/assets/data/adata.jpg" alt="Data" />
-      <h2>data</h2>
-    </div>
+
+  <div class="row g-4 justify-content-center navigation-grid">
+    @for (nav of navItems; track nav.id) {
+      <div class="col-12 col-md-4 d-flex justify-content-center">
+        <div class="nav-link" [routerLink]="nav.route">
+          <img class="img-fluid" [src]="nav.image" [alt]="nav.alt" />
+          <h2>{{ nav.title }}</h2>
+        </div>
+      </div>
+    }
   </div>
 </div>
