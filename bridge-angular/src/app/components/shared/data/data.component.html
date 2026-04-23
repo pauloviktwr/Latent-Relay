@@ -13,8 +13,16 @@
     @for (item of dataItems; track item.id) {
       <div class="col-12 col-md-10 col-lg-8">
         <div class="page-card">
-          <img class="img-fluid" [src]="item.image" [alt]="item.alt">
-          <p>{{ item.description }}</p>
+          <img class="img-fluid" src="assets/data/adata.jpg" alt="Bridge Relay data">
+          <p><strong>Título:</strong> {{ item.title }}</p>
+          <p><strong>Detalhes:</strong> {{ item.details }}</p>
+        </div>
+      </div>
+    } @empty {
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="page-card">
+          <img class="img-fluid" src="assets/data/adata.jpg" alt="Bridge Relay data">
+          <p>Carregando data ou nenhum registro disponível no momento.</p>
         </div>
       </div>
     }

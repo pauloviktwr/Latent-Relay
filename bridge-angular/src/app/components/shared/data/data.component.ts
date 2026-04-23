@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { DataService } from '../../../core/services/data.service';
+import { Data } from '../../../core/models/data.model';
 
 @Component({
   selector: 'app-data',
+  standalone: true,
   imports: [RouterLink],
   templateUrl: './data.component.html',
-  styleUrl: './data.component.css',
+  styleUrls: ['./data.component.css'],
 })
-export class DataComponent {
-  dataItems = [
-    { id: 1, image: 'assets/data/adata.jpg', alt: 'Data', description: 'ARCHIVE AND DISCUSS DIGITAL TRACES, ENCODED SIGNALS, MAPS, AND SCHEMAS.' },
-  ];
+export class DataComponent implements OnInit {
+  dataItems: Data[] = [];
+
+  constructor(private dataService: DataService) {}
+
+  ngOnInit(): void {
+    this.dataService.getAll().subscribe({
+      next: (data) => this.dataItems = data,
+      error: (err) => console.error('Erro ao carregar data', err)
+    });
+  }
 }

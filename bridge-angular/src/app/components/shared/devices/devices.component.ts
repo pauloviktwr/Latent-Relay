@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { DeviceService } from '../../../core/services/device.service';
+import { Device } from '../../../core/models/device.model';
 
 @Component({
   selector: 'app-devices',
+  standalone: true,
   imports: [RouterLink],
   templateUrl: './devices.component.html',
-  styleUrl: './devices.component.css',
+  styleUrls: ['./devices.component.css'],
 })
-export class DevicesComponent {
-  deviceItems = [
-    { id: 1, image: 'assets/devices/ctrlaltdel.jpg', alt: 'Devices', description: 'EXPLORE EQUIPMENT, TERMINALS, AND VINTAGE HARDWARE USED IN THE FIELD.' },
-  ];
+export class DevicesComponent implements OnInit {
+  deviceItems: Device[] = [];
+
+  constructor(private deviceService: DeviceService) {}
+
+  ngOnInit(): void {
+    this.deviceService.getAll().subscribe({
+      next: (data) => this.deviceItems = data,
+      error: (err) => console.error('Erro ao carregar devices', err)
+    });
+  }
 }
