@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { DeviceService } from '../../../core/services/device.service';
 import { Device } from '../../../core/models/device.model';
@@ -6,7 +7,7 @@ import { Device } from '../../../core/models/device.model';
 @Component({
   selector: 'app-devices',
   standalone: true,
-  imports: [RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './devices.component.html',
   styleUrls: ['./devices.component.css'],
 })

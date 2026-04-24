@@ -1,0 +1,35 @@
+<div class="device-list-container">
+  <h1>Dispositivos</h1>
+
+  <div *ngIf="isLoading" class="loading">
+    <p>Carregando dispositivos...</p>
+  </div>
+
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div *ngIf="!isLoading && !errorMessage && devices.length === 0" class="no-data">
+    <p>Nenhum dispositivo encontrado.</p>
+  </div>
+
+  <div *ngIf="!isLoading && devices.length > 0" class="devices-list">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>name</th>
+          <th>status</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let device of devices">
+          <td>{{ device.id }}</td>
+          <td>{{ device.name }}</td>
+          <td>{{ device.status }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

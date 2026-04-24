@@ -14,10 +14,9 @@
       <div class="col-12 col-md-10 col-lg-8">
         <div class="page-card">
           <img class="img-fluid" src="assets/devices/ctrlaltdel.jpg" alt="Devices">
-          <p><strong>Local:</strong> {{ item.place }}</p>
-          <p><strong>Fenômeno:</strong> {{ item.phenomenon }}</p>
-          <p><strong>Artefato encontrado:</strong> {{ item.artifactFound }}</p>
-          <p><strong>Dispositivo indicado:</strong> {{ item.indicatedDevice }}</p>
+          <p><strong>id:</strong> {{ item.id }}</p>
+          <p><strong>name:</strong> {{ item.name }}</p>
+          <p><strong>status:</strong> {{ item.status }}</p>
         </div>
       </div>
     } @empty {
