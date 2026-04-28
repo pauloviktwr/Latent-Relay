@@ -22,4 +22,11 @@ public class Device {
     public String getStatus() {
         return status;
     }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
