@@ -20,6 +20,7 @@ Infraestrutura planejada: Docker, AWS e CI/CD.
 Mensageria planejada: Kafka.
 
 O que já foi feito
+
 Estrutura inicial do Angular criada.
 
 Roteamento principal configurado.
