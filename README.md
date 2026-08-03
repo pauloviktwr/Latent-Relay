@@ -2,29 +2,26 @@
 
 Bridge Relay é uma aplicação full stack em desenvolvimento que integra um frontend Angular com um backend Spring Boot e PostgreSQL. O objetivo do projeto é demonstrar evolução técnica, organização de código, integração entre camadas e boas práticas de desenvolvimento.
 
+Interface com layout leve em Bootstrap e navegação orientada por cards.
+
 ---
 
 ## 📌 Visão geral
 
-O projeto simula o cadastro e o monitoramento de:
+O projeto ilustra a jornada de uma comunidade independente de investigação científica e monitoramento de anomalias:
 
-- `places` (lugares e pontos de interesse)
-- `devices` (dispositivos relacionados)
-- `data` (fenômenos, anomalias e ocorrências)
-
-A interface aposta em um layout leve com Bootstrap e navegação orientada por cards.
+- `places` (pontos de interesse com evidências de anormalidades)
+- `devices` (artefatos tecnologicos recuperados e modificados cladestinamente)
+- `data` (fenômenos, ocorrências, desenvolvimento de devices únicos)
 
 ---
 
 ## 🧱 Tecnologias principais
 
-- Frontend: Angular 21
+- Frontend: Angular 21, Bootstrap 5
 - Backend: Spring Boot 4
 - Banco de dados: PostgreSQL
-- UI: Bootstrap 5
 - Testes: unitários e automatizados
-- Infraestrutura planejada: Docker, AWS e CI/CD
-- Mensageria planejada: Kafka
 
 ---
 
@@ -42,11 +39,14 @@ A interface aposta em um layout leve com Bootstrap e navegação orientada por c
 
 - Camada de services no Angular
 - Models tipados para os dados da API
-- Integração com backend Spring Boot
 - Criação dos endpoints REST
+- Documentação com Swagger
+- Integração com backend Spring Boot
 - Persistência com PostgreSQL
 - Tratamento de erros e estados de carregamento
 - Testes unitários e automatizados
+- Infraestrutura: Docker, AWS e CI/CD
+- Mensageria: RabbitMQ
 
 ---
 
@@ -54,7 +54,7 @@ A interface aposta em um layout leve com Bootstrap e navegação orientada por c
 
 - `Bridge Relay/bridge.angular/` — frontend Angular
 - `Bridge Relay/bridge.spring/` — backend Spring Boot
-- `assets/` — arquivos estáticos e recursos adicionais
+- `/` — projeto vanilla
 
 ---
 
@@ -119,7 +119,7 @@ http://localhost:8080
 - Uso de rotas Angular para navegação de telas
 - Componentização para promover reaproveitamento
 - Backend estruturado com controllers, DTOs e serviços
-- Planejamento para infraestrutura e mensageria
+- Planejamento para infraestrutura, documentação e mensageria
 
 ---
 
@@ -132,7 +132,3 @@ Contribuições são bem-vindas. Para colaborar:
 3. Abra um pull request descrevendo o objetivo
 
 ---
-
-## 📌 Observações finais
-
-Este projeto é ideal para quem quer acompanhar um desenvolvimento full stack em Angular e Spring Boot com foco em organização, aprendizado e etapas incrementais de implementação.
