@@ -1,1 +1,40 @@
-:host { display: block; }
+.devices-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.devices-header {
+  margin-bottom: 2rem;
+}
+
+.devices-header h1 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.devices-header p {
+  margin: 0;
+  color: #666;
+}
+
+.devices-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.devices-panel {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 992px) {
+  .devices-layout {
+    grid-template-columns: 380px 1fr;
+    align-items: start;
+  }
+}

@@ -1,31 +1,16 @@
-<div class="container main-container py-4">
-  <a routerLink="/" class="main-header-link">
-    <div class="main-header">Bridge Relay</div>
-  </a>
+<section class="devices-page">
+  <header class="devices-header">
+    <h1>Gerenciamento de Devices</h1>
+    <p>Cadastre novos dispositivos e acompanhe a lista abaixo.</p>
+  </header>
 
-  <div class="intro-text">
-    <p>
-      TRADE OLD HARDWARE, ANALOG TOOLS, AND UNUSUAL MACHINES CONNECTED TO THE RELAY NETWORK.
-    </p>
-  </div>
+  <div class="devices-layout">
+    <div class="devices-panel">
+      <app-device-form></app-device-form>
+    </div>
 
-  <div class="row g-4 justify-content-center">
-    @for (item of deviceItems; track item.id) {
-      <div class="col-12 col-md-10 col-lg-8">
-        <div class="page-card">
-          <img class="img-fluid" src="assets/devices/ctrlaltdel.jpg" alt="Devices">
-          <p><strong>id:</strong> {{ item.id }}</p>
-          <p><strong>name:</strong> {{ item.name }}</p>
-          <p><strong>status:</strong> {{ item.status }}</p>
-        </div>
-      </div>
-    } @empty {
-      <div class="col-12 col-md-10 col-lg-8">
-        <div class="page-card">
-          <img class="img-fluid" src="assets/devices/ctrlaltdel.jpg" alt="Devices">
-          <p>Carregando devices ou nenhum registro disponível no momento.</p>
-        </div>
-      </div>
-    }
+    <div class="devices-panel">
+      <app-device-list></app-device-list>
+    </div>
   </div>
-</div>
+</section>

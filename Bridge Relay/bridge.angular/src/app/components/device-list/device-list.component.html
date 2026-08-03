@@ -1,26 +1,24 @@
 <div class="device-list-container">
   <h1>Dispositivos</h1>
 
+  <!-- 1. Carregamento -->
   <div *ngIf="isLoading" class="loading">
-    <p>Carregando dispositivos...</p>
+    <p>Carregando ...</p>
   </div>
 
+  <!-- 2. Erro -->
   <div *ngIf="errorMessage" class="error">
     <p>{{ errorMessage }}</p>
   </div>
 
-  <div *ngIf="!isLoading && !errorMessage && devices.length === 0" class="no-data">
-    <p>Nenhum dispositivo encontrado.</p>
-  </div>
-
-  <div *ngIf="!isLoading && devices.length > 0" class="devices-list">
+  <!-- 3. Lista de Dispositivos (Só renderiza se houver itens) -->
+  <div *ngIf="!isLoading && devices?.length" class="devices-list">
     <table>
       <thead>
         <tr>
           <th>ID</th>
-          <th>name</th>
-          <th>status</th>
-
+          <th>Name</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
@@ -31,5 +29,10 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- 4. Sem Dados (Verifica se está carregado, sem erro, mas a lista é vazia) -->
+  <div *ngIf="!isLoading && !errorMessage && devices?.length === 0" class="no-data">
+    <p>Nenhum dispositivo encontrado.</p>
   </div>
 </div>

@@ -16,7 +16,7 @@ public class DeviceService {
     private final AtomicLong sequence = new AtomicLong(1);
 
     public DeviceService() {
-        devices.add(new Device(sequence.getAndIncrement(), "Device A", "ACTIVE"));
+        devices.add(new Device(sequence.getAndIncrement(), "TESTE", "ACTIVE"));
         devices.add(new Device(sequence.getAndIncrement(), "Device B", "INACTIVE"));
         devices.add(new Device(sequence.getAndIncrement(), "Device C", "ACTIVE"));
     }

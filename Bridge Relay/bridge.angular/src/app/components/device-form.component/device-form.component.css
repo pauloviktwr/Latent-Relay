@@ -1,0 +1,32 @@
+.device-form {
+  max-width: 420px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.device-form div {
+  margin-bottom: 1rem;
+}
+
+.device-form label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.device-form input {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.device-form small {
+  color: #d32f2f;
+}
+
+.success {
+  color: #2e7d32;
+}
+
+.error {
+  color: #d32f2f;
+}
