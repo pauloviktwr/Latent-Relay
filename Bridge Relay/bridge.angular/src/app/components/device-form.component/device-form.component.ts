@@ -24,16 +24,14 @@ export class DeviceFormComponent implements OnInit {
   successMessage = '';
 
   form = this.fb.group({
-    name: ['', [Validators.required, Validators.minLength(3)]],
-    status: ['', [Validators.required]]
+    name: ['', [Validators.required, Validators.minLength(3)]]
   });
 
   ngOnInit(): void {
     if (this.device) {
       this.isEditMode = true;
       this.form.patchValue({
-        name: this.device.name,
-        status: this.device.status
+        name: this.device.name
       });
     }
   }
@@ -51,8 +49,7 @@ export class DeviceFormComponent implements OnInit {
     this.successMessage = '';
 
     const payload = {
-      name: this.form.value.name!,
-      status: this.form.value.status!
+      name: this.form.value.name!
     };
 
     const request$ = this.isEditMode && this.device?.id

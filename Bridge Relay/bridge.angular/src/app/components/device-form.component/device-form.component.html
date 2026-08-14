@@ -10,14 +10,6 @@
       </small>
     </div>
 
-    <div>
-      <label for="status">Status</label>
-      <input id="status" type="text" formControlName="status" />
-      <small *ngIf="form.controls.status.invalid && (form.controls.status.dirty || submitted)">
-        Status é obrigatório.
-      </small>
-    </div>
-
     <button type="submit" [disabled]="isSaving">
       {{ isSaving ? 'Salvando...' : (isEditMode ? 'Atualizar' : 'Salvar') }}
     </button>

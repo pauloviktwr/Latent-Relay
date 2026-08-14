@@ -1,6 +1,5 @@
-    export interface Device {
+export interface Device {
   id: number;
   name: string;
-  status: string;
-
+  slotToAssetMap?: Record<string, string>;
 }
