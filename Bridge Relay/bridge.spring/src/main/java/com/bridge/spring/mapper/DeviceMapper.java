@@ -7,14 +7,14 @@ import com.bridge.spring.entity.Device;
 public class DeviceMapper {
 
     public static Device toEntity(DeviceRequest request, Long id) {
-        return new Device(id, request.name(), request.status());
+        return new Device(id, request.name());
     }
 
     public static DeviceResponse toResponse(Device device) {
         return new DeviceResponse(
                 device.getId(),
                 device.getName(),
-                device.getStatus()
+                device.getSlotToAssetMap()
         );
     }
 }

@@ -1,5 +1,7 @@
 package com.bridge.spring.controller;
 
+import com.bridge.spring.dto.DeviceCustomizationRequest;
+import com.bridge.spring.dto.DeviceCustomizationResponse;
 import com.bridge.spring.dto.DeviceRequest;
 import com.bridge.spring.dto.DeviceResponse;
 import com.bridge.spring.entity.Device;
@@ -42,6 +44,16 @@ public class DeviceController {
         Device created = deviceService.create(request);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(DeviceMapper.toResponse(created));
+    }
+
+    @PatchMapping("/{id}/customize")
+    public ResponseEntity<DeviceCustomizationResponse> customize(
+            @PathVariable Long id,
+            @Valid @RequestBody DeviceCustomizationRequest request
+    ) {
+        return deviceService.customizeDevice(id, request)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")
