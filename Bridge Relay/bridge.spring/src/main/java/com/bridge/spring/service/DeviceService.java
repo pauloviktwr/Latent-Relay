@@ -1,13 +1,17 @@
 package com.bridge.spring.service;
 
-import com.bridge.spring.dto.DeviceRequest;
-import com.bridge.spring.entity.Device;
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
+
+import org.springframework.stereotype.Service;
+
+import com.bridge.spring.dto.DeviceCustomizationRequest;
+import com.bridge.spring.dto.DeviceCustomizationResponse;
+import com.bridge.spring.dto.DeviceRequest;
+import com.bridge.spring.entity.Device;
 
 @Service
 public class DeviceService {
@@ -16,9 +20,9 @@ public class DeviceService {
     private final AtomicLong sequence = new AtomicLong(1);
 
     public DeviceService() {
-        devices.add(new Device(sequence.getAndIncrement(), "Device A", "ACTIVE"));
-        devices.add(new Device(sequence.getAndIncrement(), "Device B", "INACTIVE"));
-        devices.add(new Device(sequence.getAndIncrement(), "Device C", "ACTIVE"));
+        devices.add(new Device(sequence.getAndIncrement(), "SPRING API SERVICE TEST"));
+        devices.add(new Device(sequence.getAndIncrement(), "SPRING API SERVICE TEST"));
+        devices.add(new Device(sequence.getAndIncrement(), "SPRING API SERVICE TEST"));
     }
 
     public List<Device> findAll() {
@@ -32,7 +36,7 @@ public class DeviceService {
     }
 
     public Device create(DeviceRequest request) {
-        Device device = new Device(sequence.getAndIncrement(), request.name(), request.status());
+        Device device = new Device(sequence.getAndIncrement(), request.name());
         devices.add(device);
         return device;
     }
@@ -40,8 +44,19 @@ public class DeviceService {
     public Optional<Device> update(Long id, DeviceRequest request) {
         return findById(id).map(existing -> {
             existing.setName(request.name());
-            existing.setStatus(request.status());
             return existing;
+        });
+    }
+
+    public Optional<DeviceCustomizationResponse> customizeDevice(Long id, DeviceCustomizationRequest request) {
+        return findById(id).map(device -> {
+            Map<String, String> slotMap = request.slotToAssetMap() == null ? Map.of() : request.slotToAssetMap();
+            device.setSlotToAssetMap(slotMap);
+
+            return new DeviceCustomizationResponse(
+                    device.getId(),
+                    device.getSlotToAssetMap()
+            );
         });
     }
 

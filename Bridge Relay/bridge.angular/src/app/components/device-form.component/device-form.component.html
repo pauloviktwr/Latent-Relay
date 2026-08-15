@@ -1,0 +1,20 @@
+<div class="device-form">
+  <h2>{{ isEditMode ? 'Editar Device' : 'Novo Device' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Nome</label>
+      <input id="name" type="text" formControlName="name" />
+      <small *ngIf="form.controls.name.invalid && (form.controls.name.dirty || submitted)">
+        Nome é obrigatório e deve ter no mínimo 3 caracteres.
+      </small>
+    </div>
+
+    <button type="submit" [disabled]="isSaving">
+      {{ isSaving ? 'Salvando...' : (isEditMode ? 'Atualizar' : 'Salvar') }}
+    </button>
+  </form>
+
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>
